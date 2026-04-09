@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CalmoraTrips</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav h1 {
+    color: #2a9d8f;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #2a9d8f;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #2a9d8f;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero button:hover {
+    background: #21867a;
+}
+
+/* Sections */
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #2a9d8f;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card p {
+    padding: 10px;
+}
+
+.card button {
+    margin: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #2a9d8f;
+    color: white;
+    cursor: pointer;
+}
+
+/* Services */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: 200px;
+}
+
+/* Contact */
+form input, form textarea {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #2a9d8f;
+    border: none;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: #2a9d8f;
+    color: white;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h1>CalmoraTrips</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero" id="home">
+    <div>
+        <h2>Explore the World with Peace of Mind</h2>
+        <button onclick="scrollToSection('packages')">Explore Packages</button>
+    </div>
+</div>
+
+<!-- Destinations -->
+<section id="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://source.unsplash.com/250x150/?bali">
+            <p>Bali - Tropical Paradise</p>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/250x150/?paris">
+            <p>Paris - City of Love</p>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/250x150/?maldives">
+            <p>Maldives - Island Escape</p>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/250x150/?dubai">
+            <p>Dubai - Luxury Travel</p>
+        </div>
+    </div>
+</section>
+
+<!-- Packages -->
+<section id="packages">
+    <h2>Tour Packages</h2>
+    <div class="cards">
+        <div class="card">
+            <p>Beach Holiday - 5 Days<br>$500</p>
+            <button>Book Now</button>
+        </div>
+        <div class="card">
+            <p>Europe Tour - 7 Days<br>$1200</p>
+            <button>Book Now</button>
+        </div>
+        <div class="card">
+            <p>Adventure Trip - 6 Days<br>$800</p>
+            <button>Book Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-box">✈ Flight Booking</div>
+        <div class="service-box">🏨 Hotel Reservations</div>
+        <div class="service-box">🗺 Guided Tours</div>
+        <div class="service-box">🛡 Travel Insurance</div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name"><br>
+        <input type="email" id="email" placeholder="Your Email"><br>
+        <textarea id="message" placeholder="Your Message"></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 CalmoraTrips | Travel with Comfort</p>
+</footer>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name === "" || email === "") {
+        alert("Please fill in all required fields!");
+        return false;
+    }
+    alert("Message sent successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>
